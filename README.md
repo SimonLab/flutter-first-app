@@ -108,3 +108,9 @@ class _RandomWordsState extends State<RandomWords> {
 ## ListView Widget
 
 Use the `ListView` widget to create an infinite list of elements.
+
+## Routes (pages)
+
+`Navigator` manage a stack of the routes.
+Adding a route to the stack display the page.
+Removing a route from the stack display the previous page.

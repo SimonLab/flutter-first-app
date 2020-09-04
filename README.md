@@ -72,7 +72,39 @@ Create a simple "Hello There" text display and an appBar (header) with the title
 The main function call the `runApp` function which takes the `MyApp` class.
 This class creates a stateless widget and provide the `build` function.
 The `build` function describe how to display the widget on the screen.
+The build method run its code each time the MaterialApp needs rendering
 
 The widget used are linked in a Tree. We start with the `Scaffold` widget 
 which creates an `appBar` and a `body`. The `appBar takes a title (define with the Text widget)
 and the property `centerTitle`.
+
+
+## Statefull Widget
+
+- StateFullWidget class which creates an instance of a State class
+- StatefullWidget is immutable
+- The State class maintain the state of the widget
+
+We can use code template to create these two classes by starting to type `stful` and enter the name of the widget class.
+
+
+```dart
+class RandomWords extends StatefulWidget {
+  @override
+  _RandomWordsState createState() => _RandomWordsState();
+}
+
+class _RandomWordsState extends State<RandomWords> {
+  @override
+  Widget build(BuildContext context) {
+    final _suggestions = <WordPair>[];
+    final _biggerFont = TextStyle(fontSize: 18.0);
+    final wordPair = WordPair.random();
+    return Text(wordPair.asPascalCase);
+  }
+}
+```
+
+## ListView Widget
+
+Use the `ListView` widget to create an infinite list of elements.

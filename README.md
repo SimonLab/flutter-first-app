@@ -42,4 +42,37 @@ By default Flutter create a simple counter application:
 
 ![default_flutter_application](https://user-images.githubusercontent.com/6057298/92235925-66850280-eeac-11ea-8436-c1ce059c590e.png)
 
-The code is contains in the `lib/main.dart` file
+The code is contains in the `lib/main.dart` file.
+Changing the file to:
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome to Flutter!',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome!'),
+          centerTitle: true,
+      ),
+      body: Center(child: Text('Hello There'))
+      )
+    );
+  }
+}
+```
+
+Create a simple "Hello There" text display and an appBar (header) with the title "Welcome!".
+The main function call the `runApp` function which takes the `MyApp` class.
+This class creates a stateless widget and provide the `build` function.
+The `build` function describe how to display the widget on the screen.
+
+The widget used are linked in a Tree. We start with the `Scaffold` widget 
+which creates an `appBar` and a `body`. The `appBar takes a title (define with the Text widget)
+and the property `centerTitle`.
